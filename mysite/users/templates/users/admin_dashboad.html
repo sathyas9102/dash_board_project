@@ -1,0 +1,11 @@
+<h1>Admin Dashboard</h1>
+<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'create_user' %}">Create User</a>
+<ul>
+  {% for user in users %}
+  <li>
+    {{ user.username }} - {{ user.department.name if user.department else 'No
+    Department' }}
+  </li>
+  {% endfor %}
+</ul>

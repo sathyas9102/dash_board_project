@@ -1,0 +1,7 @@
+<h1>Welcome to {{ request.user.department.name }} Department</h1>
+<a href="{% url 'logout' %}">Logout</a>
+<ul>
+  {% for file in files %}
+  <li><a href="{{ file.file_upload.url }}">{{ file.file_name }}</a></li>
+  {% endfor %}
+</ul>
